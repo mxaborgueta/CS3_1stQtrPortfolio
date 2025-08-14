@@ -16,15 +16,21 @@
       </label></br/>
       
       <label> Enter number of snacks
-        <input id="age" />
+        <input id="numPerDay" />
       </label></br/>
-      
-      <p> Result : 
-           <span id="resultHere"></span> 
-      </p>
-      <button> Accept Input</button>
 
+      <button onclick="checkAge()"> Show Age</button>
+      <p>Result: <span id="result"> </span> </p>
     
-      <script src="script2.js"></script>
+      <script>
+        function checkAge() {
+          let age = document.getElementById("age").value;
+          let maxAge = document.getElementById("maxAge").value;
+          let numPerDay = document.getElementById("numPerDay").value;
+          let totalRequired = (Number(numPerDay) * 365) * (Number(maxAge) - Number(age));
+
+          document.getElementById("result").innerHTML = `You will need ${totalRequired} snacks to last you until the ripe old age of ${maxAge}`;
+        }
+      </script>
   </body>
 </html>
