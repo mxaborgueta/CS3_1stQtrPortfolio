@@ -12,11 +12,26 @@
     <button onclick="checkIt()"> Check It</button>
     <p>Result: <span id="result"> </span> </p>
 
+    <footer>
+        <h3>References:</h3>
+        <p>IF. . .Else - JavaScript | MDN. (2025, July 8). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if. . .else#syntax</p>
+    </footer>
+
     <script>
         var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
 
         function checkIt() {
-            
+            let guess = document.getElementById("guess").value;
+
+            if (guess == dNumber) {
+                document.getElementById("result").innerText = `The Correct Number!`;
+            } else if (guess > dNumber) {
+                document.getElementById("result").innerText = `Lower`;
+            } else if (guess < dNumber) {
+                document.getElementById("result").innerText = 'Higher';
+            } else {
+                document.getElementById("result").innerText = 'Invalid Input';
+            }
         }
     </script>
 
